@@ -1,0 +1,32 @@
+﻿@page "/3d"
+
+<PageTitle>Survival 3D</PageTitle>
+
+<div class="container">
+     <div class="status-bar">
+          <div class="label">ENERGIA DO MURO:</div>
+          <div class="row">
+               <div class="col-auto">
+                    <div class="energia-progresso">@energia %</div>
+               </div>
+               <div class="col barra-fundo">
+                    <div class="barra-progresso" style="width: @energia%"></div>
+               </div>
+          </div>
+     </div>
+
+     <div id="threejs-container" style="width: 100%; height: 500px;" @onkeydown="HandleKey" tabindex="0">
+     </div>
+
+     <div class="comandos mt-3">
+          Selecione a tela e use as teclas W A S D para mover o cubo vermelho.
+     </div>
+
+     @if (energia <= 0)
+     {
+          <div class="game-over">
+               <h1>GAME OVER</h1>
+               <button onclick="window.location.reload()">REENTRAR NO COMBATE</button>
+          </div>
+     }
+</div>

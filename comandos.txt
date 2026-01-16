@@ -1,0 +1,5 @@
+dotnet new blazorwasm -o SnakeGame
+
+dotnet add package Homagix.ThreeJsBlazor
+
+dotnet add package Homagix.ThreeJsBlazor --version 0.5.2

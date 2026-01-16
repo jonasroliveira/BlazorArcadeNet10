@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<PageTitle>Classic Snake Game</PageTitle>
+
+<div class="comandos mb-5">Selecione a tela e use as setas do teclado</div>
+
+<div class="game-container" tabindex="0" @onkeydown="HandleKeyDown">
+    <div class="grid">
+        @for (int y = 0; y < GridHeight; y++)
+        {
+            @for (int x = 0; x < GridWidth; x++)
+            {
+                <div class="cell @GetCellClass(x, y)"></div>
+            }
+        }
+    </div>
+
+    <div class="status">
+        <h3>Pontuação: @score</h3>
+        @if (gameOver)
+        {
+            <h2 class="danger">GAME OVER!</h2>
+            <button @onclick="RestartGame">Reiniciar</button>
+ }
+    </div>
+</div>
